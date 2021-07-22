@@ -25,8 +25,13 @@ function App() {
       return;
     }
 
+    // set value arry with 1 element
     squares[i] = xIsNext ? "X" : "O";
+
+    // bingding all arry
     setSquares(squares);
+
+    // set xIsNext change turn for user
     setXIsNext(!xIsNext);
   };
 
@@ -38,8 +43,10 @@ function App() {
 
   let status;
   if (winner) {
+    debugger
     status = "Winner: " + winner;
   } else {
+    debugger
     status = "Next player: " + (xIsNext ? "X" : "O");
   }
 
@@ -63,6 +70,9 @@ function App() {
  * CraetedBy:  PQ Huy(21.07.2021)
  */
 function checkWinner(squares) {
+  /**
+   * Create straight lines where the player wins
+   */
   const lines = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
