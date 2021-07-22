@@ -63,3 +63,20 @@ ul {
 .game-info {
   margin-left: 20px;
 }
+
+.m-btn {
+  margin-top: 20px;
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.m-btn:hover {
+  background-color: #9ac79b; /* Green */
+  cursor: pointer;
+}

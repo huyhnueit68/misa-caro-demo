@@ -35,19 +35,38 @@ function App() {
     setXIsNext(!xIsNext);
   };
 
-  
+  const checkTie = () => {
+    // check full array
+    var isNull = squares.every(function (i) {
+      return i !== null
+    })
+
+    return isNull;
+  }
+
   /**
    * Check winner and set status
    */
   const winner = checkWinner(squares);
 
-  let status;
+  let status = "";
   if (winner) {
-    debugger
     status = "Winner: " + winner;
   } else {
-    debugger
-    status = "Next player: " + (xIsNext ? "X" : "O");
+    if (checkTie()) {
+      status = "Tie, please on click 'Play again'";
+    } else {
+      status = "Next player: " + (xIsNext ? "X" : "O");
+    }
+  }
+
+  /**
+   * Function handle click play again
+   * CreatedBy: PQ Huy (21.07.2021)
+   */
+  const playAgain = () => {
+    setSquares(Array(9).fill(null))
+    setXIsNext(true)
   }
 
   return (
@@ -57,6 +76,7 @@ function App() {
       </div>
       <div className="game-info">
         <div>{status}</div>
+        <button className="m-btn" onClick={() => playAgain()}>Play Again</button>
       </div>
     </div>
   );
