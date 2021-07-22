@@ -12,6 +12,7 @@ export default function Board({ squares, onClick }) {
     const renderSquares = numbs => {
         return numbs.map(num => (
             <Square
+                key={num}
                 // set value for component square button
                 value={squares[num]}
 
