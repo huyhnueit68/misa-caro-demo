@@ -7,12 +7,14 @@ export default function Board({ squares, onClick }) {
      * Function map num value and set onclick function
      * @param {array} numbs 
      * @returns component square for display button
-     * CreateBy:  PQ Huy (21.07.2021)
+     * CreateBy: PQ Huy (21.07.2021)
      */
     const renderSquares = numbs => {
-        return numbs.map(num => (
+        return numbs.map((num, index) => (
             <Square
-                key={num}
+                // set key
+                key={index}
+                
                 // set value for component square button
                 value={squares[num]}
 

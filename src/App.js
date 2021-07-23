@@ -18,7 +18,7 @@ function App() {
    * Handle the player clicking on the checkers
    * @param {number} i 
    * @returns 
-   * CreatedBy PQ Huy()21.07.2021
+   * CreatedBy: PQ Huy(21.07.2021)
    */
   const handleClick = i => {
     if (checkWinner(squares) || squares[i]) {
@@ -70,13 +70,15 @@ function App() {
   }
 
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board squares={squares} onClick={i => handleClick(i)}/>
-      </div>
-      <div className="game-info">
-        <div>{status}</div>
-        <button className="m-btn" onClick={() => playAgain()}>Play Again</button>
+    <div className="box-game">
+      <div className="game">
+        <div className="game-board">
+          <Board squares={squares} onClick={i => handleClick(i)}/>
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+          <button className="m-btn" onClick={() => playAgain()}>Play Again</button>
+        </div>
       </div>
     </div>
   );
@@ -87,7 +89,7 @@ function App() {
  * Function check winner
  * @param {array} squares 
  * @returns result check
- * CraetedBy:  PQ Huy(21.07.2021)
+ * CraetedBy: PQ Huy(21.07.2021)
  */
 function checkWinner(squares) {
   /**
